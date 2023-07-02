@@ -20,8 +20,6 @@ from res_fusion_net import ResFusionWithGLU
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-from data.pretrain import AE  # for non-contextual view
-
 class BertForView(BertPreTrainedModel):
     def __init__(self, config, output_size):
         super(BertForView, self).__init__(config)
@@ -66,21 +64,6 @@ class BinaryViewClustering(nn.Module):
         self.View0_Weight = Parameter(torch.tensor(1.0/num_views), requires_grad=True)
         self.View1_Weight = Parameter(torch.tensor(1.0/num_views), requires_grad=True)
         
-        if not BoW_mat == None:
-            # auto-encoding auxiliary for non-contextual view
-            self.aeForView0 = AE(
-                n_enc_1=500,
-                n_enc_2=500,
-                n_enc_3=2000,
-                n_dec_1=2000,
-                n_dec_2=500,
-                n_dec_3=500,
-                n_input=BoW_mat[0].shape[-1],
-                n_z=hidden_size,).cuda()
-
-            # for x0 -- headline and for x1 -- edits
-            self.aeForView0.load_state_dict(torch.load('./data/MAT/non-main_view_model/{}_3_x1.pkl'.format(task_name)))
-            print(self.aeForView0)
 
 
         self.contrastive_loss = InstanceLoss()
@@ -270,20 +253,6 @@ class TripleViewClustering(nn.Module):
         self.BertForView0 = BertForView.from_pretrained(config, output_size=hidden_size) # headline view
         self.BertForView1 = BertForView.from_pretrained(config, output_size=hidden_size) # edits view
         self.BertForView2 = BertForView.from_pretrained(config, output_size=hidden_size) # main view
-
-        if not BoW_mat == None:
-            # auto-encoding auxiliary for non-contextual view
-            self.aeForView1 = AE(
-                n_enc_1=500,
-                n_enc_2=500,
-                n_enc_3=2000,
-                n_dec_1=2000,
-                n_dec_2=500,
-                n_dec_3=500,
-                n_input=BoW_mat[1].shape[-1],
-                n_z=hidden_size,).cuda()
-            self.aeForView1.load_state_dict(torch.load('./data/MAT/non-main_view_model/chinese_news_3_x1.pkl'))
-            print(self.aeForView1)
 
 
 

@@ -51,7 +51,7 @@ seed = 44
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 
-task_name = dataset = 'bbc'
+task_name = dataset = 'chinese_news'
 
 bert_model = 'bert-base-uncased'
 if task_name == 'ag_news':  # num_train_epochs = 8
@@ -561,19 +561,19 @@ print(results_all)
 end_time = time.time()
 print('total time:', end_time - begin_time)
 
-print('ACC')
-for item in res_list:
-    print(item['ACC'])
+# print('ACC')
+# for item in res_list:
+#     print(item['ACC'])
 
-print('NMI')
-for item in res_list:
-    print(item['NMI'])
+# print('NMI')
+# for item in res_list:
+#     print(item['NMI'])
 
-print('ARI')
-for item in res_list:
-    print(item['ARI'])
+# print('ARI')
+# for item in res_list:
+#     print(item['ARI'])
 
-print('fine-tining_loss')
-for item in res_list:
-    print(item['fine-tining_loss'])
+# print('fine-tining_loss')
+# for item in res_list:
+#     print(item['fine-tining_loss'])
 

@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+# @Time : 2021/8/31 15:18
+# @Author : ruinabai_TEXTCCI
+# @FileName: contrastive_loss.py
+# @Email : m15661362714@163.com
+# @Software: PyCharm
+
+# @Blog ：https://www.jianshu.com/u/3a5783818e3a
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

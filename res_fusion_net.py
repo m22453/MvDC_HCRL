@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time : 2022/11/2 19:10
 # @Author : ruinabai_TEXTCCI
-# @FileName: main_new.py
+# @FileName: res_fusion_net.py
 # @Email : m15661362714@163.com
 # @Software: PyCharm
 

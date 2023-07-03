@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+# @Time : 2022/11/2 19:10
+# @Author : ruinabai_TEXTCCI
+# @FileName: cgddc_loss.py
+# @Email : m15661362714@163.com
+# @Software: PyCharm
+
+# @Blog ：https://www.jianshu.com/u/3a5783818e3a
+
+
 """
 cross-view graph contrastive loss based deep divergence-based clustering
 """

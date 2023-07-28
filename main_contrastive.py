@@ -58,20 +58,15 @@ if task_name == 'ag_news':  # num_train_epochs = 8
     dataset = 'ag_news/test'
 elif task_name == 'news':  # num_train_epochs = 6
     dataset = 'news/News_Category_Dataset_v2'
-elif task_name == 'airlines':
-    dataset = 'airlines_500onlyb'
 elif task_name == 'bbc':  # num_train_epochs = 10
     dataset = 'bbc'
 elif task_name == 'aminer':
     dataset = 'aminer/all_30_4000'
 elif task_name == 'mini_news':  # num_train_epochs = 12
     dataset = 'news/News_Category_Dataset_mini'
-elif task_name == 'chinese_news' or 'chinese_news_3':  # num_train_epochs = 6
+elif task_name == 'chinese_news' or task_name == 'chinese_news_3':  # num_train_epochs = 6
     bert_model = 'bert-base-chinese'
     dataset = 'chinese_news/fileOfZZ'
-elif task_name == "cnews":
-    bert_model = 'bert-base-chinese'
-    dataset = 'news/hanlp_cut_mydatasno211087new1'
 
 data_dir = './data/' + dataset
 

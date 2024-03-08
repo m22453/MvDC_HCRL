@@ -1,7 +1,7 @@
-# MvDC_HCRL
+### MvDC_HCRL
 The code of paper"A Hierarchical Contrastive Representation Learning Model for Multi-view Document Clustering".
 
-# Env
+### Env
 requirements.txt
 
 ```
@@ -36,7 +36,7 @@ Fri Mar  8 01:51:37 2024
 
 ```
 
-# Run
+### Run
 `python main_contrastive.py`
 
 ```
@@ -104,5 +104,5 @@ final confusion_matrix
 ```
 
 
-# Reference
+### Reference
 coming soon..
